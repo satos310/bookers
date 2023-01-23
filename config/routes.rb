@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'homes/top'
-  get 'gomens/top'
   get 'books/new'
   get 'books/index'
   get 'books/show'
