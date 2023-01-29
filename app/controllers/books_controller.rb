@@ -1,16 +1,23 @@
 class BooksController < ApplicationController
   def new
-    @books = Book.new
+    @book = Book.new
   end
   
   def create
-    book = Book.new(list_params)
-    book.save
-    redirect_to '/top'
+    @book = Book.new(book_params)
+    if @book.save
+      flash[:notice] = "successfully"
+      redirect_to books_path(@book.id)
+    else
+      @books = Book.all
+      # viewをindexに戻す
+      render :index
+    end
   end
 
   def index
     @books = Book.all
+    @books = Book.new
   end
 
   def show

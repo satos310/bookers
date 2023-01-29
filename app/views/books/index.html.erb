@@ -15,7 +15,7 @@
           <td>
             <%= link_to "show", book_path(book.id) %>
           </td>
-            <%= link_to "edit", book_path(book.id) %>
+            <%= link_to "edit", edit_book_path(book.id) %>
           <td>
             <%= link_to "destroy", book_path(@book.id), method: :delete, "data-confirm" => "Are you nuts?" %>
           </td>
@@ -24,19 +24,21 @@
     </tbody>
   </table>
   
-  <h2>New Table</h2>
+  <h2>New Book</h2>
   <%= form_with model: Book.new do |f| %>
     <div class="field">
-      <label>Title</label>
+      <%= f.label "Title" %><br>
       <%= f.text_field :title %>
     </div>
     
     <div class="field">
-      <label>Body</label>
+      <%= f.label "Body" %><br>
       <%= f.text_area :body %>
     </div>
     
-    <%= f.submit '投稿' %>
+    <div class="botton">
+      <%= f.submit "Create Book" %>
+    </div>
   <% end %>
 </div>
     
