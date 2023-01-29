@@ -17,7 +17,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @books = Book.new
+    @book = Book.new
   end
 
   def show
@@ -25,8 +25,15 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
   
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_top book_path(book.id)
+  end
+
   def destroy
     book = book.find(params[:id])
     book.destroy
