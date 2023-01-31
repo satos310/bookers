@@ -1,6 +1,22 @@
-<h2>Title</h2>
-<p><%=@book.title %></p>
-
-<h2>Body</h2>
-<p><%=@list.body %></p>
-<%= link_to "編集", edit_list_path(@list.id) %>
+<h1>Editing Book</h1>
+<%= form_with model: @book do |f| %>
+  <div class="field">
+    <%= f.label "Title" %><br>
+    <%= f.text_field :title %>
+  </div>
+    
+  <div class="field">
+    <%= f.label "Body" %><br>
+    <%= f.text_area :body %>
+  </div>
+    
+  <div class="botton">
+    <%= f.submit "Create Book" %>
+  </div>
+  
+  <div class="page-move">
+    <%= link_to "Show", '/show' %>
+    <%= "|" %>
+    <%= link_to "Back", '/books' %>
+  </div>
+<% end %>
