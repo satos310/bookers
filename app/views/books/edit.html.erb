@@ -15,8 +15,8 @@
   </div>
   
   <div class="page-move">
-    <%= link_to "Show", '/show' %>
+    <%= link_to "Show", book_path(@book.id) %>
     <%= "|" %>
-    <%= link_to "Back", '/books' %>
+    <%= link_to "Back", books_path %>
   </div>
 <% end %>
