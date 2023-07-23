@@ -53,3 +53,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# crontab管理を行ってくれるgem
+gem 'whenever', require: false
